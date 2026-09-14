@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root {
+  --background: #f4f7f5;
+  --foreground: #172028;
+  --fardad-green: #20c867;
+  --fardad-green-2: #63cf3d;
+  --fardad-dark: #23303a;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(39, 210, 109, .15), transparent 27rem),
+    radial-gradient(circle at 90% 15%, rgba(111, 219, 74, .14), transparent 24rem),
+    linear-gradient(180deg, #f8faf9 0%, #edf4f0 100%);
+  color: var(--foreground);
+  font-family: var(--font-vazirmatn), Tahoma, "Segoe UI", Arial, sans-serif;
+}
+
+::selection { background: rgba(32, 200, 103, .22); }
+
+.glass-grid {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(rgba(31, 41, 55, .025) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 41, 55, .025) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+.floating-orb {
+  position: fixed;
+  border-radius: 9999px;
+  filter: blur(55px);
+  opacity: .45;
+  pointer-events: none;
+  animation: floatOrb 12s ease-in-out infinite alternate;
+}
+
+@keyframes floatOrb {
+  from { transform: translate3d(0,0,0) scale(1); }
+  to { transform: translate3d(24px,-18px,0) scale(1.08); }
+}
+
+.soft-scrollbar::-webkit-scrollbar { width: 8px; height: 8px; }
+.soft-scrollbar::-webkit-scrollbar-thumb { background: rgba(100,116,139,.25); border-radius: 999px; }
+.soft-scrollbar::-webkit-scrollbar-track { background: transparent; }

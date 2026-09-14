@@ -1,0 +1,8 @@
+{
+  "crons": [
+    {
+      "path": "/api/cron/daily-report-sync",
+      "schedule": "45 20 * * *"
+    }
+  ]
+}

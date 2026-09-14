@@ -1,0 +1,10 @@
+"use client";
+import * as React from "react";
+import * as SelectPrimitive from "@radix-ui/react-select";
+import { Check, ChevronDown, ChevronUp } from "lucide-react";
+import { cn } from "@/lib/utils";
+export const Select = SelectPrimitive.Root;
+export const SelectValue = SelectPrimitive.Value;
+export function SelectTrigger({ className, children, ...props }: React.ComponentProps<typeof SelectPrimitive.Trigger>) { return <SelectPrimitive.Trigger className={cn("flex h-10 min-w-32 items-center justify-between gap-2 rounded-xl border border-slate-200 bg-white/70 px-3 text-sm text-slate-700 outline-none focus:ring-4 focus:ring-emerald-500/10", className)} {...props}>{children}<SelectPrimitive.Icon><ChevronDown className="size-4 opacity-50" /></SelectPrimitive.Icon></SelectPrimitive.Trigger>; }
+export function SelectContent({ className, children, ...props }: React.ComponentProps<typeof SelectPrimitive.Content>) { return <SelectPrimitive.Portal><SelectPrimitive.Content className={cn("z-50 min-w-[8rem] overflow-hidden rounded-xl border border-slate-200 bg-white p-1 shadow-xl", className)} position="popper" {...props}><SelectPrimitive.ScrollUpButton className="flex items-center justify-center py-1"><ChevronUp className="size-4" /></SelectPrimitive.ScrollUpButton><SelectPrimitive.Viewport>{children}</SelectPrimitive.Viewport><SelectPrimitive.ScrollDownButton className="flex items-center justify-center py-1"><ChevronDown className="size-4" /></SelectPrimitive.ScrollDownButton></SelectPrimitive.Content></SelectPrimitive.Portal>; }
+export function SelectItem({ className, children, ...props }: React.ComponentProps<typeof SelectPrimitive.Item>) { return <SelectPrimitive.Item className={cn("relative flex cursor-default select-none items-center rounded-lg py-2 pr-8 pl-3 text-sm text-slate-700 outline-none focus:bg-emerald-50 focus:text-emerald-800", className)} {...props}><span className="absolute right-2 flex size-4 items-center justify-center"><SelectPrimitive.ItemIndicator><Check className="size-4" /></SelectPrimitive.ItemIndicator></span><SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText></SelectPrimitive.Item>; }

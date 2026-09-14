@@ -1,0 +1,62 @@
+{
+  "name": "fardad-report-portal",
+  "version": "0.3.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma migrate deploy && prisma db seed && next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "postinstall": "prisma generate",
+    "db:generate": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:deploy": "prisma migrate deploy",
+    "db:push": "prisma db push",
+    "db:seed": "prisma db seed",
+    "db:studio": "prisma studio",
+    "db:init": "prisma migrate deploy && prisma db seed"
+  },
+  "dependencies": {
+    "@radix-ui/react-avatar": "^1.1.10",
+    "@radix-ui/react-dialog": "^1.1.15",
+    "@radix-ui/react-dropdown-menu": "^2.1.16",
+    "@radix-ui/react-label": "^2.1.7",
+    "@radix-ui/react-select": "^2.2.6",
+    "@radix-ui/react-separator": "^1.1.7",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@radix-ui/react-tabs": "^1.1.13",
+    "@radix-ui/react-tooltip": "^1.2.8",
+    "bcryptjs": "^3.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "googleapis": "^159.0.0",
+    "jalaali-js": "^1.2.8",
+    "jose": "^6.1.0",
+    "lucide-react": "^0.468.0",
+    "next": "16.3.4",
+    "react": "19.2.8",
+    "react-dom": "19.2.8",
+    "tailwind-merge": "^3.3.1",
+    "zod": "^4.1.5",
+    "@prisma/adapter-pg": "7.10.0",
+    "@prisma/client": "7.10.0",
+    "dotenv": "^17.2.2",
+    "pg": "^8.16.3"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4.1.13",
+    "@types/node": "^22.15.0",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "eslint": "^9.35.0",
+    "eslint-config-next": "16.3.4",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.9.2",
+    "@types/pg": "^8.15.5",
+    "prisma": "7.10.0",
+    "tsx": "^4.20.5"
+  },
+  "engines": {
+    "node": ">=20.19.0"
+  }
+}
